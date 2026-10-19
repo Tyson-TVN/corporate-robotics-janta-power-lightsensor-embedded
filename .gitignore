@@ -1,0 +1,5 @@
+test_core
+test_sketch
+tests/DEMO_OUTPUT.txt
+*.o
+build/
