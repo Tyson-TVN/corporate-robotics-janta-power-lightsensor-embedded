@@ -6,7 +6,7 @@ This firmware covers the ClickUp task **"Software algorithm"**: *turn the sensor
 
 > **Status: prototype v0.1, October 19 2026.**
 > - The math is tested on a desktop: 30 core checks plus 24 checks that run the real sketch against fake hardware.
-> - It has **not** been compiled for a real ESP32 yet; the toolchain wasn't available where it was written.
+> - **Compiles in Arduino IDE** for *ESP32 Dev Module* with the Espressif esp32 core 3.3.12 (Oct 19 2026): 319,648 bytes flash (24%), 22,644 bytes RAM (6%). Not yet uploaded to a board.
 > - It has **not** been run on the real photodiode head.
 > - All thresholds and the calibration flow are provisional.
 
@@ -111,7 +111,7 @@ g++ -std=c++17 -Imock -I../firmware/JantaPower_SunSensor -x c++ test_sketch.cpp 
 
 ## Not done yet
 
-- Real ESP32 compile and upload
+- Upload and run on a real ESP32
 - Real sensor characterization and calibration
 - Outdoor accuracy and repeatability
 - Reflection/outlier rejection (FMEA RPN 150)
