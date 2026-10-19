@@ -51,7 +51,7 @@ This firmware covers the ClickUp task **"Software algorithm"**: *turn the sensor
 1. **Add the ESP32 board package.** In *File → Preferences → Additional boards manager URLs*, add:
    `https://espressif.github.io/arduino-esp32/package_esp32_index.json`
    Then go to *Boards Manager*, search "esp32" (by Espressif), and install it.
-2. **Open the sketch:** `firmware/JantaPower_SunSensor/JantaPower_SunSensor.ino`. All three files in that folder must stay together.
+2. **Open the sketch:** `firmware/JantaPower_SunSensor/JantaPower_SunSensor.ino`. All the files in that folder (.ino and .h) must stay together.
 3. **Select the board:** *Tools → Board → esp32 → ESP32 Dev Module*, then pick the port. Click **Verify**, then **Upload**.
 4. **Open Serial Monitor** at **115200 baud**, line ending **Newline**.
 

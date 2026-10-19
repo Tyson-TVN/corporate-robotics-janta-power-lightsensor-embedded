@@ -13,19 +13,11 @@
 #include <Preferences.h>
 #include "Config.h"
 #include "SunSensorCore.h"
-
-using sun::Quad;
-using sun::CalTable;
+#include "SensorTypes.h"   // Mode, Status, Calibration (see note in that file)
 
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
-enum class Mode { DEMO, LIVE };
-enum class Status {
-  WARMUP, LOW_LIGHT, SATURATED, CHANNEL_FAULT, UNCALIBRATED,
-  SETTLING, OUT_OF_RANGE, ANGLE_ESTIMATE, NEAR_NORMAL_ESTIMATE
-};
-
 const char* statusText(Status s) {
   switch (s) {
     case Status::WARMUP: return "WARMUP";
@@ -39,13 +31,6 @@ const char* statusText(Status s) {
     default: return "NEAR_NORMAL_ESTIMATE";
   }
 }
-
-// Calibration for one mode. DEMO and LIVE are kept separate so synthetic data
-// can never end up in the real calibration.
-struct Calibration {
-  Quad gain{1, 1, 1, 1};
-  CalTable x, y;
-};
 
 Calibration liveCal;
 Calibration demoCal;
